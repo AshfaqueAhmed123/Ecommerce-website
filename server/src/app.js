@@ -11,7 +11,7 @@ app.use(express.urlencoded({
 }));
 
 app.get("/",(req,res)=>{
-    res.send("<h1>Hello</h1>")
+    res.json({message:"Hello"})
 })
 
 export default app;

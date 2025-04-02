@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "vite-project",
+      "name": "client",
       "dependencies": {
         "@tailwindcss/vite": "^4.0.17",
         "react": "^19.0.0",

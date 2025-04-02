@@ -50,6 +50,7 @@ const userSchema = new Schema(
     },
     cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
     orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+    refreshToken:{type:String}
   },
   {
     timestamps: true,

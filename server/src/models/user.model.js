@@ -26,7 +26,11 @@ const userSchema = new Schema({
         max:18,
         required:[true,"password is required"]
     },
-    interests:["sports","shopping","outing","gaming","reading","exercise","coding","cooking"],
+    interests:{
+        type: [String],
+        enum: ["sports", "shopping", "outing", "gaming", "reading", "exercise", "coding", "cooking"],
+        default: ["other"]
+    },
     shippingAddress:{
         type:String,
         min:20,

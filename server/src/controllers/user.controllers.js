@@ -83,21 +83,19 @@ const login = async (req, res) => {
 
     // generate access token
     const accessToken = jwt.sign(
-      { id: user._id, email: user.email, username: user.username },
+      { id: user._id, email: user.email, username: user.username, role: user.role},
       ACCESS_TOKEN_SECRET,
       { expiresIn: ACCESS_TOKEN_EXPIRY }
     );
 
     const refreshToken = jwt.sign(
-      { id: user._id, email: user.email, username: user.username },
+      { id: user._id, email: user.email, username: user.username, role: user.role },
       REFRESH_TOKEN_SECRET,
       { expiresIn: REFRESH_TOKEN_EXPIARY }
     );
 
     user.refreshToken = refreshToken;
-    const abc = await user.save();
-
-    console.log(abc);
+    await user.save();
 
     return res
       .status(200)

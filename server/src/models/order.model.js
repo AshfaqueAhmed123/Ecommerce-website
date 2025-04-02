@@ -2,26 +2,26 @@ import mongoose , {Schema,model} from "mongoose";
 
 const orderSchema = new Schema({
     customer:{
-        type:mongoose.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:[true, "customer is required"]
     },
     product:{
-        type:mongoose.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"Product",
         required:[true, "product is required"]
     },
     quantity:{
         type:Number,
-        required:true,
+        required:[true, "product quantity is required"],
     },
     placeDate:{
         type: Date,
-        required:true,
+        required:[true, "order place date is required"],
     },
     shipmentDate:{
         type:Date,
-        required:true
+        required:[true, "order shipment date is required"]
     },
     shipmentAddress:{
         type:String,

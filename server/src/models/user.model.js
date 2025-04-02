@@ -28,6 +28,12 @@ const userSchema = new Schema(
       max: 18,
       required: [true, "password is required"],
     },
+    role:{
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+      required:[true,"role is required"]
+    },
     interests: {
       type: [String],
       enum: [

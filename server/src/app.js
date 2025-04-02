@@ -10,8 +10,8 @@ app.use(express.urlencoded({
     limit:"16kb"
 }));
 
-app.get("/",(req,res)=>{
-    res.json({message:"Hello"})
-})
+// routes
+import productRouter from "./routes/product.routes.js";
+app.use("/api/v1/product",productRouter)
 
 export default app;
